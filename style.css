@@ -1,0 +1,183 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: "georgia",serif;
+    background: linear-gradient(135deg,#ffe4ef,#ffc1d8,#fff0f6);
+    color: #9e2859;
+    text-align: center;
+    min-height: 100vh;
+}
+.page{
+    min-height: 100vh;
+    padding: 35px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: centre;
+    overflow: hidden;
+}
+.hidden{
+    display: none !important;
+}
+h1{
+    font-size: clamp(25px, 6vw,38px);
+}
+p{
+    line-height: 1.8;
+}
+button{
+    border: none;
+    border-radius: 30px;
+    padding: 14px 23px;
+    background: linear-gradient(135deg,#ff4f91, #d91e67);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px #d91e673d;
+    transition: 0.3s;
+}
+button:hover{
+    transform: scale(1.05);
+}
+.gift{
+    width: 220px;
+    height: 200px;
+    position: relative;
+    margin: 65px 0 20px;
+    cursor: pointer;
+    animation: float 2s infinite ease-in-out;
+}
+.gift-box{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 145px;
+    background: #ff6f9f;
+    border: 3px solid #ee4c83;
+    border-radius: 8px;
+    box-shadow: 0 15px 30px #c72c6433;
+}
+.gift-box::before{
+    content: "";
+    position: absolute;
+    left: 42%;
+    width: 16px;
+    height: 100%;
+    background: #ffe1eb;
+}
+.gift-lid{
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    width: 240px;
+    height: 60px;
+    background: #ff9cbb;
+    border: 3px solid #ee4c83;
+    border-radius: 8px;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+    transition: transform 0.7s;
+}
+.gift-lid::before{
+    content: "🦋";
+    position: absolute;
+    top: -48px;
+    font-size: 48px;
+}
+.gift.open .gift-lid{
+    transform: translateY(-90px) rotate(-12deg);
+}
+.letter{
+    width: min(100%, 480px);
+    padding: 30px 23px;
+    background: #fffafd;
+    border: 2px solid #ffb4d0;
+    border-radius: 24px;
+    box-shadow: 0 12px 35px #b52d6330;
+    animation: appear 0.8s ease;
+}
+.letter-icon{
+    font-size: 48px;
+}
+.letter h2{
+    font-size: 23px;
+}
+.letter p{
+    color: #85425f;
+    font-size: 16px;
+    line-height: 1.9;
+}
+#lovepage{
+    background: radial-gradient(circle at 50% 40%,#fff1f7, transparent 35%), linear-gradient(135deg, #ffb5d1,#ff77ad,#ffe0ec);
+    position: relative;
+}
+.big-heart{
+    font-size: 150px;
+    color: #ff2478;
+    text-shadow: 
+    0 0 15px #ff6ba5,
+    0 0 40px #ff4b91,
+    0 0 75px #ffb4d0;
+    animation: heartbeat 1.2s infinite;
+}
+#lovepage h2{
+    color: #a11f56;
+}
+#lovepage p{
+    max-width: 330px;
+    font-size: 17px;
+    color: #7d204a;
+}
+.roses{
+    font-size: 35px;
+    margin: 10px;
+}
+.sparkles{
+    font-size: 26px;
+    animation: float 2s infinite;
+}
+.hint{
+    animation: float 2s infinite;
+}
+@keyframes float{
+    0%, 100%{transform: translateY(-10px);}
+}
+@keyframes heartbeat{
+    0%,100%{
+        transform: scale(1);
+    }
+    15%{transform: scale(1.12);}
+    30%{transform: scale(1);}
+    45%{transform: scale(1.08);}
+}
+@keyframes appear{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#opengiftnutton{
+    margin-top: 25px;
+    position: relative;
+    z-index: 5;
+    min-height: 50px;
+    padding: 14px 25px;
+    background: linear-gradient(135deg,#ff4f91,#d91e67);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px #d91e6740;
+}
+#opengiftbutton:disabled{
+    opacity: 0.8;
+    cursor: default;
+}
